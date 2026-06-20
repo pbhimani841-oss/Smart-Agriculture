@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        background-color: #F0FDF4;
+        /* Light green-gray */
+        color: #1f2937;
+        /* Gray-800 for readability */
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+}
+
+/* Custom Utility for hover lifts requested everywhere */
+@layer utilities {
+    .hover-lift {
+        @apply transition-transform duration-200 hover:-translate-y-1 hover:shadow-md;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
