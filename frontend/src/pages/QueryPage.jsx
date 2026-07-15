@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import api from '../services/api';
 
 const QueryPage = () => {
     const [subject, setSubject] = useState('');
     const [message, setMessage] = useState('');
     const [statusMessage, setStatusMessage] = useState({ type: '', text: '' });
-    const [queries, setQueries] = useState([]);
+
 
     // As a user (farmer or customer), we could fetch our own queries if the backend supported it.
     // However, the backend currently only has query index for admins.

@@ -30,6 +30,7 @@ const NotificationDropdown = () => {
             const intervalId = setInterval(fetchNotifications, 30000);
             return () => clearInterval(intervalId);
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [user]);
 
     // Close dropdown on outside click

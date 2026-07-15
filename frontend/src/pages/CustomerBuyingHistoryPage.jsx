@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Package, Search, MapPin, Calendar, DownloadCloud, CreditCard } from 'lucide-react';
+import { Package, Search, MapPin, DownloadCloud, CreditCard } from 'lucide-react';
 import api from '../services/api';
 import { useToast } from '../context/ToastContext';
 
@@ -39,6 +39,7 @@ const CustomerBuyingHistoryPage = () => {
 
     useEffect(() => {
         fetchHistory();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [month, year]); // Only auto-fetch on month/year changes
 
     const handleSearchSubmit = (e) => {
