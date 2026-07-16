@@ -6,29 +6,40 @@ const Home = () => {
     return (
         <div className="flex flex-col min-h-screen font-sans">
             {/* Hero Section */}
-            <section className="relative bg-gradient-to-r from-[#166534] to-[#16A34A] text-white py-24 mb-12 rounded-xl shadow-md overflow-hidden mx-4 mt-6">
-                <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
-                    {/* Abstract background shape pattern */}
-                    <svg className="absolute left-0 top-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <polygon fill="currentColor" points="0,100 100,0 100,100" />
-                    </svg>
+            <section className="relative bg-gradient-to-r from-green-800 to-green-600 text-white py-24 mb-12 rounded-xl shadow-lg overflow-hidden mx-4 mt-6">
+              {/* Subtle abstract background pattern */}
+              <div className="absolute inset-0 opacity-5 pointer-events-none">
+                <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                  <polygon fill="currentColor" points="0,100 100,0 100,100" />
+                </svg>
+              </div>
+
+              {/* Glass‑morphism content wrapper */}
+              <div className="relative z-10 container mx-auto px-6 text-center backdrop-blur-sm bg-black/30 rounded-lg py-12">
+                <h1 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight drop-shadow-md animate-fade-in-up">
+                  Empowering <span className="text-green-300">Agriculture</span>
+                  <br className="hidden md:block" /> Connect Directly.
+                </h1>
+                <p className="text-lg md:text-xl text-green-100 mb-10 max-w-2xl mx-auto leading-relaxed animate-fade-in-up delay-150">
+                  A transparent, secure, and modern digital marketplace bridging the gap between local farmers and quality‑conscious customers.
+                </p>
+                <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 animate-fade-in-up delay-300">
+                  <Link
+                    to="/signup/farmer"
+                    className="bg-green-700 hover:bg-green-800 text-white font-bold text-lg py-3 px-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 ease-out flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                    aria-label="Join as Farmer"
+                  >
+                    <Tractor className="mr-2" size={24} /> Join as Farmer
+                  </Link>
+                  <Link
+                    to="/signup/customer"
+                    className="bg-transparent border-2 border-white text-white font-bold text-lg py-3 px-8 rounded-lg shadow-md hover:bg-white/10 hover:shadow-xl transition-all duration-300 ease-out flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                    aria-label="Join as Customer"
+                  >
+                    <Store className="mr-2" size={24} /> Join as Customer
+                  </Link>
                 </div>
-                <div className="relative z-10 container mx-auto px-6 text-center">
-                    <h1 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight drop-shadow-md">
-                        Empowering <span className="text-green-300">Agriculture</span> <br className="hidden md:block" /> Connect Directly.
-                    </h1>
-                    <p className="text-lg md:text-xl text-green-100 mb-10 max-w-2xl mx-auto leading-relaxed">
-                        A transparent, secure, and modern digital marketplace bridging the gap between local farmers and quality-conscious customers.
-                    </p>
-                    <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                        <Link to="/signup/farmer" className="bg-[#16A34A] text-white font-bold text-lg py-3 px-8 rounded-lg shadow-sm hover:bg-[#15803D] hover-lift transition-all flex items-center justify-center">
-                            <Tractor className="mr-2" size={24} /> Join as Farmer
-                        </Link>
-                        <Link to="/signup/customer" className="bg-transparent border-2 border-white text-white font-bold text-lg py-3 px-8 rounded-lg shadow-sm hover:bg-white/10 hover-lift transition-all flex items-center justify-center">
-                            <Store className="mr-2" size={24} /> Join as Customer
-                        </Link>
-                    </div>
-                </div>
+              </div>
             </section>
 
             {/* Core Features */}
