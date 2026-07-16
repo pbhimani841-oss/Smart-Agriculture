@@ -6,6 +6,13 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\QueryController;
 
+// Force CORS for all preflight requests
+Route::options('{any}', function (Request $request) {
+    return response()->json([], 204)
+        ->header('Access-Control-Allow-Origin', '*')
+        ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
+        ->header('Access-Control-Allow-Headers', '*');
+})->where('any', '.*');
 Route::post('/signup/farmer', [AuthController::class, 'farmerSignup']);
 Route::post('/signup/customer', [AuthController::class, 'customerSignup']);
 Route::post('/login', [AuthController::class, 'login']);
